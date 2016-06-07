@@ -1,0 +1,41 @@
+/* Custom Stylesheet */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.background {
+    height: 300px;
+}
+
+.collapsible {
+    border: 0px solid black;
+}
+
+.collapsible-header, .collapsible-body {
+    border-bottom: 0px solid #333;
+}
+
+.background {
+    background: url("img/bg_main.png") no-repeat center;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 2px #000;
+}
+
+.row {
+    margin-bottom: 0;
+}
+
+footer.page-footer {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#dj-link:hover {
+    text-decoration: underline;
+}

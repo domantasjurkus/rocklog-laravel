@@ -1,0 +1,7 @@
+/vendor
+/node_modules
+/public/storage
+/script/db_connect.php
+.idea/
+.env
+_ide_helper.pph
