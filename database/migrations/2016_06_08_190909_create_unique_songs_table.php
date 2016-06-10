@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateUniqueSongsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,11 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::dropIfExists('unique_songs');
+        Schema::create('unique_songs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique()->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->string('artist');
+            $table->string('song');
         });
     }
 
@@ -29,6 +27,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::drop('unique_songs');
     }
 }

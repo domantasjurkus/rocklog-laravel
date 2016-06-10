@@ -20,11 +20,28 @@
 }
 
 .background {
-    background: url("img/bg_main.png") no-repeat center;
+    /* background: url("img/bg_main.png") no-repeat center; */
 }
 
 .text-shadow {
     text-shadow: 2px 2px 2px #000;
+}
+
+.fb-avatar {
+    width: 50px;
+    height: 50px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+    float: left;
+}
+
+.fb-label {
+    display: inline-block;
+}
+
+.logout-icon {
+    margin-right: 10px;
 }
 
 .row {

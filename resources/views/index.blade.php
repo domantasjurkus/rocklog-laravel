@@ -28,17 +28,42 @@
 
 	<div class="row grey darken-4">
 		<div class="col s12 m10 l5 offset-m1 offset-l1">
-			<p class="grey-text">Prisijungimas prie Facebook ir dainų išsaugojimas - jau greitai!</p>
+			
+			<br/>
 			<ul class="collapsible grey darken-4" data-collapsible="accordion">
+			
+				<ul class="collection">
 				
-					@foreach($songs as $song)
-						<li>
-						 	<div class="collapsible-header red darken-4 white-text"><b class="artist">{{ $song->artist  }}</b> - <span class="song">{{ $song->song }}</span></div>
-							<div class="collapsible-body grey darken-4">
-								<div class="video-container" id="video-container"></div>
+				 	<li class="collection-item grey darken-3 grey-text">
+				 		@if(is_null($fb_user))
+							<p class="grey-text">&nbspIšsaugok dainas - Prisijunk su <a href="redirect">Facebook!</a></p>
+						@else
+							<div class="fb-avatar" 
+							style="background-image: url('{{ $fb_user->getAvatar() }}');">
 							</div>
-						</li>
-					@endforeach
+						
+							<p class="center-align">{{ $fb_user->getName() }}
+								<a href="logout" class="secondary-content">
+									<i class="material-icons grey-text logout-icon">input</i>
+								</a>
+							</p>
+							
+						@endif
+				 	</li>
+				</ul>
+				<br/>
+			
+				@foreach($songs as $song)
+					<li>
+						<div class="song collapsible-header red darken-4 white-text">
+							<b class="artist">{{ $song->artist  }}</b> - <span class="song">{{ $song->song }}</span>
+							<!--<a href="#!" class="secondary-content"><i class="material-icons grey-text">grade</i></a>-->
+						</div>
+						<div class="collapsible-body grey darken-4">
+							<div class="video-container" id="video-container"></div>
+						</div>
+					</li>
+				@endforeach
 				
             </ul>
 		</div>
