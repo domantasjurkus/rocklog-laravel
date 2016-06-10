@@ -23,14 +23,17 @@ class IndexController extends Controller
         // $user = $request->session()->get('user', null);
         $fb_user = $request->session()->get('fb_user', null);
         
-        // $songs = DB::table('stream')->take(30)->orderBy('created_at', 'desc')->get();
-        $songs = DB::select(
+        # Fetch songs the old way from the `songs` table
+        $songs = DB::table('songs')->take(30)->orderBy('created_at', 'desc')->get();
+        
+        # Fetch songs the new way by joining `unique_songs` and `stream`
+        /*$songs = DB::select(
             "SELECT song_id, artist, song, stream.created_at
             FROM stream
             JOIN unique_songs ON stream.song_id = unique_songs.id
             ORDER BY created_at DESC
             LIMIT 30"
-        );
+        );*/
         
         return view('index', ['songs' => $songs, 'fb_user' => $fb_user]);
     }
