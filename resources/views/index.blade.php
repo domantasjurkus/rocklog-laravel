@@ -9,7 +9,7 @@
 				<ul class="collection">
 				 	<li class="collection-item grey darken-3 grey-text">
 				 		@if(is_null($fb_user))
-							<p class="grey-text">&nbspDainų išsaugojimas su <a href="redirect">Facebook</a> - jau greitai!</p>
+							<p class="grey-text">&nbspPrisijunk su <a href="redirect">Facebook</a> ir išsaugok dainas!</p>
 						@else
 							<div class="fb-avatar" style="background-image: url('{{ $fb_user->getAvatar() }}');"></div>
 							<p class="center-align">

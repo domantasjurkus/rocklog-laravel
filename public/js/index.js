@@ -93,13 +93,11 @@ function stopVideo() {
             $.ajax({
                 url: documentRoot+"/save/"+song_id,
                 success: function(data) {
-                    
-                    // Tooltip
-                    console.log(data);
-                
+                                                        
                 }, error: function(data) {
-                    console.log(data.responseText);
                     icon.removeClass('stared');
+                    // Gets triggered when tapping 2 stars fast
+                    // Materialize.toast('Prisijunk su Facebook ir išsaugok dainas!', 2000);
                 }
             });
             
