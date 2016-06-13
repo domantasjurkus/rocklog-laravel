@@ -35,11 +35,11 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
-    //Socialite
+    # Socialite
     'facebook' => [
-        'client_id'     => '276953895983869',
-        'client_secret' => '487eb8703bb3b365b221b0645d3c6fc2',
-        'redirect'      => url('/').'/callback',
+        'client_id'     => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect'      => env('FACEBOOK_REDIRECT'),
     ],
 
 ];

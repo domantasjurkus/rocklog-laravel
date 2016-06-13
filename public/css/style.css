@@ -1,5 +1,21 @@
 /* Custom Stylesheet */
 
+/* Force scroll bar */
+html {
+    overflow-y: scroll;
+}
+
+/* For sticky footer */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 .icon-block {
   padding: 0 15px;
 }
@@ -20,7 +36,7 @@
 }
 
 .background {
-    /* background: url("img/bg_main.png") no-repeat center; */
+    /* background: url("img/bg_darken.png") no-repeat center; */
 }
 
 .text-shadow {
@@ -46,6 +62,15 @@
 
 .row {
     margin-bottom: 0;
+}
+
+.star-icon {
+    /* color: #B71C1C; */
+    color: #FF1E1E;
+}
+
+/*.star-icon:hover,*/ .stared {
+    color: yellow;
 }
 
 footer.page-footer {

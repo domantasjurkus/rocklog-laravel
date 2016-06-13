@@ -39,14 +39,16 @@ function stopVideo() {
 
     // On document ready
     $(function(){
+        
+        var documentRoot = $("#document_root").attr("content");
+        var row = $(".collapsible-header");
 
-        // Attach onClick event for every card
-        $(".collapsible-header").click(function(e) {
+        // Attach onClick event for every row
+        row.click(function(e) {
             var song = $(this).find(".song").html();
             var artist = $(this).find(".artist").html();
-            var documentRoot = $("#document_root").attr("content");
             var line = $(this).next();
-
+            
             // If the bar is being closed
             if ($(this).hasClass("active")) {
                 console.log("closing");
@@ -80,6 +82,32 @@ function stopVideo() {
 
         });
 
+        // On star click
+        $(".star-icon").click(function(e) {
+            e.stopPropagation();
+            
+            var icon = $(this);
+            var song_id = $(this).parent().attr("id");
+
+            // Save song
+            $.ajax({
+                url: documentRoot+"/save/"+song_id,
+                success: function(data) {
+                    
+                    // Tooltip
+                    console.log(data);
+                
+                }, error: function(data) {
+                    console.log(data.responseText);
+                    icon.removeClass('stared');
+                }
+            });
+            
+            // Mark star yellow
+            icon.hasClass('stared') ? icon.removeClass('stared') : icon.addClass('stared');
+            
+        });
+
         // For the collections
         $('.collapsible').collapsible({
             accordion: false
@@ -103,4 +131,8 @@ function getID(root, artist, song) {
         }
     });
 
+}
+
+function markStars() {
+    
 }

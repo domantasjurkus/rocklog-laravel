@@ -20,15 +20,15 @@ class SocialAuthController extends Controller
         $fb_user = Socialite::driver('facebook')->user();
         $user = $service->createOrGetUser($fb_user);
         
-        //auth()->login($user);
-        // $request->session()->put('user', $user);
+        auth()->login($user);
+        $request->session()->put('user', $user);
         $request->session()->put('fb_user', $fb_user);
         return redirect('/');
     }
     
     public function logout(Request $request)
     {
-        // $request->session()->forget('user');
+        $request->session()->forget('user');
         $request->session()->forget('fb_user');
         return redirect('/');
     }

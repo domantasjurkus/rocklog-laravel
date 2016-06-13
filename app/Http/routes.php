@@ -14,6 +14,8 @@
 # Index and video ID fetching routes
 Route::get('/', 'IndexController@index');
 Route::get('/videoid', 'IndexController@videoid');
+Route::get('/save/{id}', 'IndexController@save_song');
+Route::get('/saved', 'IndexController@saved');
 
 # Facebook Login
 Route::get('/redirect', 'SocialAuthController@redirect');

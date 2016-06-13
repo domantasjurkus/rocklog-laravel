@@ -50,10 +50,7 @@ function insert() {
         exit();
     }
     
-    # Check if this song has already been played
-    $artist = $db->real_escape_string($artist);
-    $song = $db->real_escape_string($song);
-    
+    # Check if this song has already been played    
     $query_str = "SELECT id FROM unique_songs WHERE `artist`='$artist' AND `song`='$song'";
     if (!$query = $db->query($query_str)) echo "Query failed \n";
     $array = $query->fetch_assoc();
