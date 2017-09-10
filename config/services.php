@@ -42,4 +42,9 @@ return [
         'redirect'      => env('FACEBOOK_REDIRECT'),
     ],
 
+	'firebase' => [
+		'database_url' => 'https://rocklog-1326.firebaseio.com',
+		'secret' => 'Xs7GcMKCASkg3iTuVcTsoWBSLMxd3ndamz5tUYpq'
+	]
+
 ];

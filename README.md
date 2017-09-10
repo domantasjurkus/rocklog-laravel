@@ -10,3 +10,6 @@ Project built using the Laravel framework, some Google APIs and Materialize.
 - Add option to sign in with Google
 - Add feature to save songs to YouTube playlist
 - Add info section for each selected song/artist
+
+### Todo  
+`*` Connect to Firebase

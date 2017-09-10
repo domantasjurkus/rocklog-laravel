@@ -159,7 +159,7 @@ return [
         /*
          * Added By Dom
          */
-        Laravel\Socialite\SocialiteServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class
     ],
 
     /*

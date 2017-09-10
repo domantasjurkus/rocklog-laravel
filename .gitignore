@@ -5,3 +5,6 @@
 .idea/
 .env
 _ide_helper.pph
+
+bootstrap/cache/
+storage/
